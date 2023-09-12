@@ -1,6 +1,6 @@
 extends Node
 
-signal experiance_vial_collected(number:float)
+signal experience_vial_collected(number:float)
 
-func emit_experiance_vial_collected(number: float):
-	experiance_vial_collected.emit(number)
+func emit_experience_vial_collected(number: float):
+	experience_vial_collected.emit(number)

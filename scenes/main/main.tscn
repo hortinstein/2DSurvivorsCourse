@@ -1,41 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5qdauba6thyx"]
+[gd_scene load_steps=10 format=3 uid="uid://c5qdauba6thyx"]
 
 [ext_resource type="PackedScene" uid="uid://b5ys2n0t82tkd" path="res://scenes/manager/enemy_manager.tscn" id="1_7fmfp"]
 [ext_resource type="PackedScene" uid="uid://b83jndyswhpex" path="res://scenes/game_object/game_camera/game_camera.tscn" id="1_86070"]
 [ext_resource type="PackedScene" uid="uid://dio477u4l50gy" path="res://scenes/game_object/player/player.tscn" id="1_cyoof"]
 [ext_resource type="PackedScene" uid="uid://di08wrf6jdky0" path="res://scenes/ui/arena_time_ui.tscn" id="1_ebaxp"]
 [ext_resource type="TileSet" uid="uid://cp8tn4agqsv6a" path="res://resources/tileset.tres" id="1_tbq1w"]
-[ext_resource type="PackedScene" uid="uid://b8fnsehyfdfsq" path="res://scenes/manager/experiance_manager.tscn" id="4_0msbg"]
+[ext_resource type="PackedScene" uid="uid://dn07aqel0oml3" path="res://scenes/ui/experience_bar.tscn" id="2_f50gj"]
+[ext_resource type="PackedScene" uid="uid://b8fnsehyfdfsq" path="res://scenes/manager/experience_manager.tscn" id="4_0msbg"]
 [ext_resource type="PackedScene" uid="uid://bbeldeik1topl" path="res://scenes/manager/arena_time_manager.tscn" id="6_4r512"]
+[ext_resource type="PackedScene" uid="uid://bktlbf548ed7b" path="res://scenes/manager/upgrade_manager.tscn" id="6_36cx0"]
 
 [node name="Main" type="Node"]
 
 [node name="ArenaTimeUI" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_ebaxp")]
 arena_time_manager = NodePath("../ArenaTimeManager")
 
+[node name="ExperienceBar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("2_f50gj")]
+experience_manager = NodePath("../ExperienceManager")
+
 [node name="ArenaTimeManager" parent="." instance=ExtResource("6_4r512")]
 
 [node name="EnemyManager" parent="." instance=ExtResource("1_7fmfp")]
 
-[node name="EnemyManager2" parent="." instance=ExtResource("1_7fmfp")]
+[node name="ExperienceManager" parent="." instance=ExtResource("4_0msbg")]
 
-[node name="EnemyManager3" parent="." instance=ExtResource("1_7fmfp")]
-
-[node name="EnemyManager5" parent="." instance=ExtResource("1_7fmfp")]
-
-[node name="EnemyManager6" parent="." instance=ExtResource("1_7fmfp")]
-
-[node name="EnemyManager7" parent="." instance=ExtResource("1_7fmfp")]
-
-[node name="EnemyManager8" parent="." instance=ExtResource("1_7fmfp")]
-
-[node name="EnemyManager9" parent="." instance=ExtResource("1_7fmfp")]
-
-[node name="EnemyManager10" parent="." instance=ExtResource("1_7fmfp")]
-
-[node name="EnemyManager4" parent="." instance=ExtResource("1_7fmfp")]
-
-[node name="ExperianceManager" parent="." instance=ExtResource("4_0msbg")]
+[node name="UpgradeManager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("6_36cx0")]
+experience_manager = NodePath("../ExperienceManager")
 
 [node name="GameCamera" parent="." instance=ExtResource("1_86070")]
 
