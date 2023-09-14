@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dio477u4l50gy"]
+[gd_scene load_steps=8 format=3 uid="uid://dio477u4l50gy"]
 
 [ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_g73ne"]
 [ext_resource type="Texture2D" uid="uid://cu5rfomnh62ct" path="res://scenes/player.png" id="1_if4uf"]
 [ext_resource type="PackedScene" uid="uid://bgcfwg2g5ljhu" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_5fjsp"]
+[ext_resource type="PackedScene" uid="uid://c68xia66nbbpi" path="res://scenes/component/health_component.tscn" id="2_rbpmc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n2uvi"]
 radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ax5c4"]
+radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bd61f"]
 radius = 5.0
@@ -15,21 +19,35 @@ collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_g73ne")
 
+[node name="HealthComponent" parent="." instance=ExtResource("2_rbpmc")]
+
 [node name="AbilityManager" type="Node" parent="."]
 
 [node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("2_5fjsp")]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DamageIntervalTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="PickupArea2D" type="Area2D" parent="."]
 position = Vector2(0, -6)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea2D"]
 shape = SubResource("CircleShape2D_n2uvi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_if4uf")
 offset = Vector2(0, -8)
+
+[node name="CollisionArea2D" type="Area2D" parent="."]
+position = Vector2(0, -7)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea2D"]
+shape = SubResource("CircleShape2D_ax5c4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
