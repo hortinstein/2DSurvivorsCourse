@@ -33,7 +33,7 @@ func pick_upgrades():
 	var chosen_upgrades: Array[AbilityUpgrade] = []
 	var filtered_upgrades = upgrade_pool.duplicate()
 	for i in 2:
-		if filtered_upgrades.size == 0:
+		if len(filtered_upgrades) == 0:
 			break
 		var chosen_upgrade = filtered_upgrades.pick_random() as AbilityUpgrade
 		chosen_upgrades.append(chosen_upgrade)
