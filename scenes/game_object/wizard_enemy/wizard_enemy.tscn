@@ -133,7 +133,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f4ef0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cw8w4"]
 resource_local_to_scene = true
 shader = SubResource("Shader_4o201")
 shader_parameter/lerp_percent = 0.0
@@ -169,7 +169,7 @@ health_component = NodePath("../HealthComponent")
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("8_p1kcb")]
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
-hit_flash_material = SubResource("ShaderMaterial_f4ef0")
+hit_flash_material = SubResource("ShaderMaterial_cw8w4")
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("2_k1en4")]
 health_component = NodePath("../HealthComponent")
