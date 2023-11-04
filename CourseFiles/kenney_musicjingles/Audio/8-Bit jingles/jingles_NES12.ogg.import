@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cpx5k7d8yswmb"
+path="res://.godot/imported/jingles_NES12.ogg-34638a757a634b2272da41bb45f33cc6.oggvorbisstr"
+
+[deps]
+
+source_file="res://CourseFiles/kenney_musicjingles/Audio/8-Bit jingles/jingles_NES12.ogg"
+dest_files=["res://.godot/imported/jingles_NES12.ogg-34638a757a634b2272da41bb45f33cc6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
