@@ -38,9 +38,9 @@ func set_bus_volume_percent(bus_name:String,percent:float):
 
 func on_window_button_pressed():
 	var mode = DisplayServer.window_get_mode()
-	if mode != DisplayServer.WINDOW_MODE_FULLSCREEN:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	else: 
+	if mode != DisplayServer.WINDOW_MODE_FULLSCREEN:oWINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS,false) 
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	
 	update_display()
